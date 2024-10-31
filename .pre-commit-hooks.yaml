@@ -1,0 +1,7 @@
+---
+- id: runic
+  name: check runic formatting
+  description: "Runic.jl code formatter"
+  language: script
+  entry: src/runic.sh
+  types: [julia]
