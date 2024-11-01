@@ -5,3 +5,10 @@
   language: script
   entry: src/runic.sh
   types: [julia]
+
+- id: runic-julia
+  name: check runic formatting
+  description: "Runic.jl code formatter (using julia as language)"
+  language: julia
+  entry: src/runic.jl
+  types: [julia]
