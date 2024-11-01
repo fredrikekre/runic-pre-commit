@@ -2,6 +2,6 @@
 - id: runic
   name: check runic formatting
   description: "Runic.jl code formatter"
-  language: script
-  entry: src/runic.sh
+  language: julia
+  entry: src/runic.jl
   types: [julia]
