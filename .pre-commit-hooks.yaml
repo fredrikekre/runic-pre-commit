@@ -5,3 +5,4 @@
   language: julia
   entry: src/runic.jl
   types: [julia]
+  minimum_pre_commit_version: "4.1.0"
