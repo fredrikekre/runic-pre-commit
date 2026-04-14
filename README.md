@@ -16,6 +16,10 @@ repos:
       - id: runic
 ```
 
+### Configuration
+
+#### Runic version
+
 By default this will configure the hook to run with the latest Runic version available at
 hook installation time. To explicitly configure a version of Runic you can use pre-commits
 `additional_dependencies` configuration, for example to use Runic version 1.4.3:
@@ -28,6 +32,21 @@ repos:
       - id: runic
         additional_dependencies:
           - 'Runic@1.4.3'
+```
+
+#### Runic arguments
+
+By default `pre-commit` runs `runic` with the `--inplace` and `--diff` flags. This means
+that, after pre-commit runs, files will be left modified. If you prefer running in check
+mode you can override the default flags using `args`:
+
+```yaml
+repos:
+  - repo: https://github.com/fredrikekre/runic-pre-commit
+    rev: v2.0.1
+    hooks:
+      - id: runic
+        args: ["--check", "--diff"]
 ```
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env julia
 
 using Runic
-argv = String["--inplace", "--diff"]
+argv = String[]
 append!(argv, ARGS)
 exit(Runic.main(argv))
