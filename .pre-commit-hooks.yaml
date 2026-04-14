@@ -4,5 +4,6 @@
   description: "Runic.jl code formatter"
   language: julia
   entry: src/runic.jl
+  args: ["--inplace", "--diff"]
   types: [julia]
   minimum_pre_commit_version: "4.1.0"
