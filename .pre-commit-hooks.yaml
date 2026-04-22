@@ -1,9 +1,17 @@
 ---
 - id: runic
   name: check runic formatting
-  description: "Runic.jl code formatter"
+  description: "Runic.jl code formatter for Julia source files"
   language: julia
   entry: src/runic.jl
   args: ["--inplace", "--diff"]
   types: [julia]
+  minimum_pre_commit_version: "4.1.0"
+- id: runic-md
+  name: check runic formatting (markdown)
+  description: "Runic.jl code formatter for embedded Julia blocks in Markdown files"
+  language: julia
+  entry: src/runic.jl
+  args: ["--inplace", "--diff"]
+  types: [markdown]
   minimum_pre_commit_version: "4.1.0"
