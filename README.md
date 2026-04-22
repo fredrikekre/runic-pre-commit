@@ -5,15 +5,31 @@ A [pre-commit](https://pre-commit.com/) hook to run the
 
 ## Usage
 
+### Julia files
+
 Install `pre-commit` ([installation instructions](https://pre-commit.com/#install)) and add
 the following to your `.pre-commit-config.yaml` file:
 
 ```yaml
 repos:
   - repo: https://github.com/fredrikekre/runic-pre-commit
-    rev: v2.1.0
+    rev: v2.2.0
     hooks:
       - id: runic
+```
+
+### Markdown files
+
+To also format Julia code blocks in Markdown files, add the `runic-md` hook (requires Runic
+>= 1.7):
+
+```yaml
+repos:
+  - repo: https://github.com/fredrikekre/runic-pre-commit
+    rev: v2.2.0
+    hooks:
+      - id: runic
+      - id: runic-md
 ```
 
 ### Configuration
@@ -27,7 +43,7 @@ hook installation time. To explicitly configure a version of Runic you can use p
 ```yaml
 repos:
   - repo: https://github.com/fredrikekre/runic-pre-commit
-    rev: v2.1.0
+    rev: v2.2.0
     hooks:
       - id: runic
         additional_dependencies:
@@ -43,12 +59,25 @@ mode you can override the default flags using `args`:
 ```yaml
 repos:
   - repo: https://github.com/fredrikekre/runic-pre-commit
-    rev: v2.1.0
+    rev: v2.2.0
     hooks:
       - id: runic
         args: ["--check", "--diff"]
 ```
 
+#### Docstrings
+
+To also format Julia code blocks in docstrings, add `--docstrings` to the `args` (requires
+Runic >= 1.7):
+
+```yaml
+repos:
+  - repo: https://github.com/fredrikekre/runic-pre-commit
+    rev: v2.2.0
+    hooks:
+      - id: runic
+        args: ["--inplace", "--diff", "--docstrings"]
+```
 
 > [!NOTE]
 > The current version (v2.0.0 and above) of this repository make use of Julia
