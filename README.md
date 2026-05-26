@@ -21,7 +21,7 @@ repos:
 ### Markdown files
 
 To also format Julia code blocks in Markdown files, add the `runic-md` hook (requires Runic
->= 1.7):
+\>= 1.7):
 
 ```yaml
 repos:
