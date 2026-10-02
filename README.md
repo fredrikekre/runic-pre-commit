@@ -79,6 +79,22 @@ repos:
         args: ["--inplace", "--diff", "--docstrings"]
 ```
 
+#### Code block languages
+
+By default Runic formats ```` ```julia ````, ```` ```julia-repl ````, ```` ```jldoctest ````,
+and Quarto ```` ```{julia} ```` code blocks in Markdown files and docstrings. To customize
+which fenced code block languages are treated as Julia code, add `--languages` to the
+`args` (requires Runic >= 1.12), for example to also format Documenter blocks:
+
+```yaml
+repos:
+  - repo: https://github.com/fredrikekre/runic-pre-commit
+    rev: v2.2.0
+    hooks:
+      - id: runic-md
+        args: ["--inplace", "--diff", "--languages=julia,julia-repl,jldoctest,@example,@repl,@setup,@eval"]
+```
+
 > [!NOTE]
 > The current version (v2.0.0 and above) of this repository make use of Julia
 > language hooks which require pre-commit version 4.1.0 or later. If you cannot
